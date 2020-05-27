@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+
+{% load i18n %}
+{% block content %}
+
+    {% if not error %}
+        <o-card>
+            <o-row class="flex flex--justify-center">
+                <o-avatar name="{{ application.name }}" />
+            </o-row>
+            <form method="post">
+                {% csrf_token %}
+                {% for field in form %}
+                    {% if field.is_hidden %}
+                        {{ field }}
+                    {% endif %}
+                {% endfor %}
+                <o-text-heading class="text--center"> Authorize <o-text-mark> {{ application.name }} </o-text-mark> </o-text-heading>
+                <div class="text--center"> Application requests access rights </div>
+                <o-list>
+                    {% for scope in scopes_descriptions %}
+                        <o-list-item>
+                            {{ scope }}
+                        </o-list-item>
+                    {% endfor %}
+                </o-list>
+
+                <o-button color="red" type="submit" value="Cancel">Cancel</o-button>
+                <o-button :disabled="10" type="submit" name="allow" value="Authorize">Authorize</o-button>
+            </form>
+        </o-card>
+        <o-container>
+            <span class="text--center text--muted text--small">
+                Open Foundation
+            </span>
+        </o-container>
+    {% else %}
+        <div class="text--center">
+            <o-text-heading> Error </o-text-heading>
+        </div>
+        <o-tip type="error">{{ error.description }}</o-tip>
+    {% endif %}
+
+{% endblock %}
