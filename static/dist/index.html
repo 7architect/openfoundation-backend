@@ -1,28 +1,81 @@
-{% load static %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <title>{% block title %}{% endblock title %}</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="">
-  <meta name="author" content="">
-
-  <link rel="stylesheet" rel="stylesheet" href="{% static "styles/common.css" %}">
-</head>
-
-<body>
-
-<div id="app">
-  <o-layout 
-    ref="layout"
-    class="app__layout"
-    style="opacity: 0"
-  >
-    {% block content %}
-    {% endblock content %}
-  </o-layout>
-</div>
-
-<script src="{% static "dist/main.bundle.js" %}"></script>
-</html><script src="main.bundle.js"></script>
+Html Webpack Plugin:
+<pre>
+  Error: Child compilation failed:
+  Entry module not found: Error: Can't resolve '/Users/alexander/code/osf/openfoundation-container/server/architect/templates/oauth2_provider/base.html'   in '/Users/alexander/code/osf/openfoundation-container/server':
+  Error: Can't resolve '/Users/alexander/code/osf/openfoundation-container/server/architect/templates/oauth2_provider/base.html' in '/Users/alexander/co  de/osf/openfoundation-container/server'
+  
+  - child-compiler.js:122 
+    [server]/[html-webpack-plugin]/lib/child-compiler.js:122:18
+  
+  - Compiler.js:343 
+    [server]/[webpack]/lib/Compiler.js:343:11
+  
+  - Compiler.js:681 
+    [server]/[webpack]/lib/Compiler.js:681:15
+  
+  
+  - Hook.js:154 AsyncSeriesHook.lazyCompileHook
+    [server]/[tapable]/lib/Hook.js:154:20
+  
+  - Compiler.js:678 
+    [server]/[webpack]/lib/Compiler.js:678:31
+  
+  
+  - Hook.js:154 AsyncSeriesHook.lazyCompileHook
+    [server]/[tapable]/lib/Hook.js:154:20
+  
+  - Compilation.js:1423 
+    [server]/[webpack]/lib/Compilation.js:1423:35
+  
+  
+  - Hook.js:154 AsyncSeriesHook.lazyCompileHook
+    [server]/[tapable]/lib/Hook.js:154:20
+  
+  - Compilation.js:1414 
+    [server]/[webpack]/lib/Compilation.js:1414:32
+  
+  
+  - Hook.js:154 AsyncSeriesHook.lazyCompileHook
+    [server]/[tapable]/lib/Hook.js:154:20
+  
+  - Compilation.js:1409 
+    [server]/[webpack]/lib/Compilation.js:1409:36
+  
+  
+  - Hook.js:154 AsyncSeriesHook.lazyCompileHook
+    [server]/[tapable]/lib/Hook.js:154:20
+  
+  - Compilation.js:1405 
+    [server]/[webpack]/lib/Compilation.js:1405:32
+  
+  
+  - Hook.js:154 AsyncSeriesHook.lazyCompileHook
+    [server]/[tapable]/lib/Hook.js:154:20
+  
+  - Compilation.js:1342 Compilation.seal
+    [server]/[webpack]/lib/Compilation.js:1342:27
+  
+  - Compiler.js:675 
+    [server]/[webpack]/lib/Compiler.js:675:18
+  
+  - Compilation.js:1261 
+    [server]/[webpack]/lib/Compilation.js:1261:4
+  
+  
+  - Hook.js:154 AsyncSeriesHook.lazyCompileHook
+    [server]/[tapable]/lib/Hook.js:154:20
+  
+  - Compilation.js:1253 Compilation.finish
+    [server]/[webpack]/lib/Compilation.js:1253:28
+  
+  - Compiler.js:672 
+    [server]/[webpack]/lib/Compiler.js:672:17
+  
+  
+  - Compilation.js:1185 
+    [server]/[webpack]/lib/Compilation.js:1185:12
+  
+  - Compilation.js:1044 errorAndCallback
+    [server]/[webpack]/lib/Compilation.js:1044:6
+  
+</pre><script src="main.bundle.js"></script>

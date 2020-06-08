@@ -1,6 +1,6 @@
 FROM python:alpine3.11
 
-WORKDIR /server
+WORKDIR /server/
 
 COPY ./requirements*.txt ./
 COPY ./manage.py ./

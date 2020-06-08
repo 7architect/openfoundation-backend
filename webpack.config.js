@@ -1,6 +1,5 @@
 const path = require('path')
 const VueLoaderPlugin = require('vue-loader/lib/plugin')
-var HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   mode: 'development',
@@ -28,9 +27,5 @@ module.exports = {
   },
   plugins: [
     new VueLoaderPlugin(),
-    new HtmlWebpackPlugin({
-      template: './architect/templates/oauth2_provider/base.html',
-      minify: false
-    })
   ]
 };
